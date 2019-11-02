@@ -70,7 +70,8 @@ function LoadMap(mapid) {
     Player.dir = 0;
 
 
-    imgMap = new Image(); imgMap.onload = function () {
+    imgMap = new Image();
+    imgMap.onload = function () {
         //g_nLoad++;
         Player.srcx = imgMap.width / 2;
         Player.srcy = imgMap.height / 2;
@@ -80,7 +81,8 @@ function LoadMap(mapid) {
         VirualScreen.srcx = Player.srcx - Screen_w / 2;
         VirualScreen.srcy = Player.srcy - Screen_h / 2;
 
-    }; imgMap.src = "assets/map_" + mapid + ".jpg";
+    };
+    imgMap.src = "assets/map_" + mapid + ".jpg";
 
     LoadNPC(mapid);
 }
@@ -97,7 +99,7 @@ function LoadNPC(mapid) {
         "command": "GetNPCsFromMapID"
     }, function (data) {
 		console.log(data);
-        npc_sets = parse_data(data);    //console.log(npc_sets.length);		
+        npc_sets = parse_data(data);    //console.log(npc_sets.length);
         for (var i = 0; i < npc_sets.length; i++) {
 
             NpcRole[i] = new Array();
